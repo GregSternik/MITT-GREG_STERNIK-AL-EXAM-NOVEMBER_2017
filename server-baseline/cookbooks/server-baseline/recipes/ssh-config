@@ -1,0 +1,11 @@
+apt_package 'openssh-server'
+
+ssh_config "AllowGroups" do
+	string "AllowGroups #{node[:ssh][:allowed_groups].join('sshusers')}"
+end
+
+ssh_config "PermitRootLogin" do
+	string "PermitRootLogin #{node[:ssh][:permit_root_login] = "no"
+end
+
+
